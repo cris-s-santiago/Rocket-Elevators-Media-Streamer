@@ -55,7 +55,7 @@ class InterventionsController < ApplicationController
             # Redirect back
             redirect_back fallback_location: interventions_path, notice: "Your Request was successfully created!"
         end
-        createZendesk()
+        #createZendesk()
     end
 
     def intervention_params

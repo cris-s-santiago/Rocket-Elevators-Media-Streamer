@@ -47,7 +47,11 @@ gem 'chartkick'
 # Sendgrid
 gem 'sendgrid-ruby'
 
+# Watson
 gem 'ibm_watson'
+
+#FactoryBot
+gem 'factory_bot'
 
 # ADMIN SECTION
 gem 'rails_admin', '~> 2.0'
@@ -96,6 +100,7 @@ gem "zendesk_api"
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  gem 'rspec-rails' # rspec-rails (TDD)
 end
 
 group :development do
