@@ -57,6 +57,9 @@ gem 'factory_bot'
 gem 'rails_admin', '~> 2.0'
 gem 'rails_admin_rollincode', '~> 1.0'
 
+#OpenWeather
+gem 'open-weather'
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.4', '>= 5.2.4.5'
 # Use mysql as the database for Active Record
