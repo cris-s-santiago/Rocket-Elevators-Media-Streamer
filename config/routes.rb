@@ -16,8 +16,8 @@ Rails.application.routes.draw do
   root to: "pages#index"
   get "residential" => "pages#residential"
   get "commercial" => "pages#commercial"
-  get "quotes" => "pages#quote"
   get "/index" => "pages#index"
+  #get "/media" => "lib/Elevator_Media#getContent"
   get '/watson/update' => 'watson#speak'
   
   # /quotes is the action from the form in quote.html.erb
