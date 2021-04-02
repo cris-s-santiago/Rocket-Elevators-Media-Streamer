@@ -1,9 +1,9 @@
 class QuotesController < ApplicationController
  
-  # # GET /quotes or /quotes.json
-  # def index
-  #   @quotes = Quote.all
-  # end
+  # GET /quotes or /quotes.json
+  def index
+    @quotes = Quote.all
+  end
 
   # # GET /quotes/1 or /quotes/1.json
   # def show
@@ -151,6 +151,24 @@ class QuotesController < ApplicationController
       redirect_back fallback_location: root_path, notice: "Your Quote was successfully created and sent!"
     end
 
+    #zendesk_quote()
+    
+
+  end # End for def Create
+
+
+
+
+   #===================================================================================================
+   # DEFINING @quote = Quote.new(quote_params) BELOW:
+   #===================================================================================================
+
+   # Only allow a list of trusted parameters through.
+  def quote_params
+    params.fetch(:quote, {})
+  end
+
+  def zendesk_quote
     client = ZendeskAPI::Client.new do |config|
       config.url = ENV['ZENDESK_URL']
       config.username = ENV['ZENDESK_USERNAME']
@@ -171,19 +189,6 @@ class QuotesController < ApplicationController
       :priority => "normal",
       :type => "question"
       )
-
-  end # End for def Create
-
-
-
-
-   #===================================================================================================
-   # DEFINING @quote = Quote.new(quote_params) BELOW:
-   #===================================================================================================
-
-   # Only allow a list of trusted parameters through.
-  def quote_params
-    params.fetch(:quote, {})
   end
 
 end # End of class Quote
