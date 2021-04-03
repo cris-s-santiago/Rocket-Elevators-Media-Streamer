@@ -20,15 +20,23 @@ describe ElevatorMedia::Streamer do
 
     context "Check a string" do
         it "Check if the return of the methode is string" do
-            html = streamer.getContent(saopaulo)
+            html = streamer.getContent(saopaulo, "Weather")
             expect(html).to be_a(String)
         end
     end
 
     context "Return html" do
         it "Should return valid HTML" do
-            html = streamer.getContent(saopaulo)
+            html = streamer.getContent(saopaulo, "Weather")
             expect(html).to include('div')
         end
     end
+
+    context "Return html Joke" do
+        it "Should return valid HTML" do
+            html = streamer.getContent("", "Joke")
+            expect(html).to include('div')            
+        end
+    end
+
 end
