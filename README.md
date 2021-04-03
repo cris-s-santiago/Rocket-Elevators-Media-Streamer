@@ -12,6 +12,7 @@
 📌 Media source:
 
 - Open Weather API: https://openweathermap.org/api
+- Joke API: http://api.icndb.com/jokes/random
 
 📌 For testing:
 
